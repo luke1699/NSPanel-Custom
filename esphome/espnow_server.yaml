@@ -16,14 +16,6 @@ substitutions:
   temperatura_sensore5: "Temperatura Nodo 5"
   umidita_sensore5: "Umidità Nodo 5"
   nome_stanza6: "Stanza 6"
-  temperatura_sensore6: "Temperatura Nodo 6"
-  umidita_sensore6: "Umidità Nodo 6"
-  nome_stanza7: "Stanza 7"
-  temperatura_sensore7: "Temperatura Nodo 7"
-  umidita_sensore7: "Umidità Nodo 7"
-  nome_stanza8: "Stanza 8"
-  temperatura_sensore8: "Temperatura Nodo 8"
-  umidita_sensore8: "Umidità Nodo 8"
 
 ######## Settings Relè ############
   Rele_name_1: "Relè 1"
@@ -32,8 +24,6 @@ substitutions:
   Rele_name_4: "Relè 4"
   Rele_name_5: "Relè 5"
   Rele__name_6: "Relè 6"
-  Rele_name_7: "Relè 7"
-  Rele_name_8: "Relè 8"
 
 esphome:
   platformio_options:
@@ -54,10 +44,6 @@ beethowen_receiver:
       name_prefix: "&{nome_stanza5}"
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
       name_prefix: "&{nome_stanza6}"
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza7}"
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza8}"
 
 sensor:
   - platform: homeassistant
@@ -66,7 +52,7 @@ sensor:
   - platform: template
     id: tempmedium
     name: "Temperatura Media ${name_1}"
-    lambda: return ((id(temperature_1).state + id(temperature_2) + id(temperature_3) + id(temperature_4) + id(temperature_5) + id(temperature_6) + id(temperature_7) + id(temperature_8) /8);
+    lambda: return ((id(temperature_1).state + id(temperature_2) + id(temperature_3) + id(temperature_4) + id(temperature_5) + id(temperature_6) /6);
     update_interval: 10s
     device_class: "temperature"
     state_class: "measurement"
