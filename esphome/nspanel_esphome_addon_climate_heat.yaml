@@ -69,10 +69,13 @@ climate:
           mode: HEAT
           target_temperature: 21
     preset:
-      - name: "Off"
+      - name: Fuori Casa
         default_target_temperature_low: ${target_low} ${temp_units}
-        mode: "off"
-      - name: Home
+        mode: "heat"
+      - name: Notturno
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "heat"
+      - name: A Casa
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
 
