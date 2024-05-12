@@ -136,32 +136,6 @@ sensor:
       name: "&{umidita_sensore6}"
       accuracy_decimals: 0
       unit_of_measurement: "%"
-  ########### configurazione nodo 7 sensori #################
-  - platform: beethowen_receiver
-    mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 7
-    sensors:
-    - measurement_type: 0x02
-      id: temperature_7
-      name: "&{temperatura_sensore7}"
-      accuracy_decimals: 2
-      unit_of_measurement: "°C"
-    - measurement_type: 0x03
-      name: "&{umidita_sensore7}"
-      accuracy_decimals: 0
-      unit_of_measurement: "%"
-  ########### configurazione nodo 8 sensori #################
-  - platform: beethowen_receiver
-    mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 8
-    sensors:
-    - measurement_type: 0x02
-      id: temperature_8
-      name: "&{temperatura_sensore8}"
-      accuracy_decimals: 2
-      unit_of_measurement: "°C"
-    - measurement_type: 0x03
-      name: "&{umidita_sensore8}"
-      accuracy_decimals: 0
-      unit_of_measurement: "%"
 
 binary_sensor:
   - platform: template
@@ -169,7 +143,7 @@ binary_sensor:
     id: stato_riscaldamento
     device_class: heat
     lambda: |-
-      if ((id(thermostat_1).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_2).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_3).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_4).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_5).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_6).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_7).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_8).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT)) {
+      if ((id(thermostat_1).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_2).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_3).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_4).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_5).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_6).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT)) {
         return true;
       } else {
         return false;
@@ -188,7 +162,7 @@ binary_sensor:
     id: stato_raffrescamento
     device_class: cold
     lambda: |-
-      if ((id(thermostat_1).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_2).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_3).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_4).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_5).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_6).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_7).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_8).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL)) {
+      if ((id(thermostat_1).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_2).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_3).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_4).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_5).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_6).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL)) {
         return true;
       } else {
         return false;
