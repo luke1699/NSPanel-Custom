@@ -506,132 +506,6 @@ climate:
         default_target_temperature_low: 21
         default_target_temperature_high: 25
 
-  - platform: thermostat
-    name: "Termostato All"
-    id: thermostat_all
-    visual:
-      min_temperature: ${temp_min} ${temp_units}
-      max_temperature: ${temp_max} ${temp_units}
-      temperature_step: 0.5    
-    min_heating_run_time: 300s
-    min_heating_off_time: 300s
-    min_cooling_off_time: 300s
-    min_cooling_run_time: 300s
-    min_idle_time: 30s
-    off_mode: 
-      - switch.turn_off: relay
-      - switch.turn_off: relay_2
-      - switch.turn_off: relay_3
-      - switch.turn_off: relay_4
-      - switch.turn_off: relay_5
-      - switch.turn_off: relay_6
-      - switch.turn_off: relay_7
-      - switch.turn_off: relay_8
-      - switch.turn_off: relay_heat
-      - switch.turn_off: relay_cool
-    idle_action:
-      - switch.turn_off: relay
-      - switch.turn_off: relay_2
-      - switch.turn_off: relay_3
-      - switch.turn_off: relay_4
-      - switch.turn_off: relay_5
-      - switch.turn_off: relay_6
-      - switch.turn_off: relay_7
-      - switch.turn_off: relay_8
-      - switch.turn_off: relay_heat
-      - switch.turn_off: relay_cool
-    cool_action:
-      - switch.turn_on: relay
-      - switch.turn_on: relay_2
-      - switch.turn_on: relay_3
-      - switch.turn_on: relay_4
-      - switch.turn_on: relay_5
-      - switch.turn_on: relay_6
-      - switch.turn_on: relay_7
-      - switch.turn_on: relay_8
-      - switch.turn_off: relay_heat
-      - switch.turn_on: relay_cool
-      - climate.control: 
-          id: thermostat_1
-          mode: COOL
-          target_temperature: 25
-      - climate.control: 
-          id: thermostat_2
-          mode: COOL
-          target_temperature: 25
-      - climate.control: 
-          id: thermostat_3
-          mode: COOL
-          target_temperature: 25
-      - climate.control: 
-          id: thermostat_4
-          mode: COOL
-          target_temperature: 25
-      - climate.control: 
-          id: thermostat_5
-          mode: COOL
-          target_temperature: 25
-      - climate.control: 
-          id: thermostat_6
-          mode: COOL
-          target_temperature: 25
-      - climate.control: 
-          id: thermostat_7
-          mode: COOL
-          target_temperature: 25
-      - climate.control: 
-          id: thermostat_8
-          mode: COOL
-          target_temperature: 25
-    heat_action:
-      - switch.turn_on: relay
-      - switch.turn_on: relay_2
-      - switch.turn_on: relay_heat
-      - switch.turn_off: relay_cool
-      - climate.control: 
-          id: thermostat_1
-          mode: HEAT
-          target_temperature: 21
-      - climate.control: 
-          id: thermostat_2
-          mode: HEAT
-          target_temperature: 21
-      - climate.control: 
-          id: thermostat_3
-          mode: HEAT
-          target_temperature: 21
-      - climate.control: 
-          id: thermostat_4
-          mode: HEAT
-          target_temperature: 21
-      - climate.control: 
-          id: thermostat_5
-          mode: HEAT
-          target_temperature: 21
-      - climate.control: 
-          id: thermostat_6
-          mode: HEAT
-          target_temperature: 21
-      - climate.control: 
-          id: thermostat_7
-          mode: HEAT
-          target_temperature: 21
-      - climate.control: 
-          id: thermostat_8
-          mode: HEAT
-          target_temperature: 21
-    sensor: tempmedium
-    preset:
-      - name: Fuori Casa
-        default_target_temperature_low: ${temp_min} ${temp_units}
-        default_target_temperature_high: 27
-      - name: Notturno
-        default_target_temperature_low: ${temp_min} ${temp_units}
-        default_target_temperature_high: 25
-      - name: A Casa
-        default_target_temperature_low: 21
-        default_target_temperature_high: 25
-
 switch:
   - platform: gpio
     pin: GPIO15
@@ -641,45 +515,25 @@ switch:
   - platform: gpio
     pin: GPIO16
     name: "&{Rele_name_2}"
-    id: relay_2
+    id: relay_02
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO17
     name: "&{Rele_name_3}"
-    id: relay_3
+    id: relay_03
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO18
     name: "&{Rele_name_4}"
-    id: relay_4
+    id: relay_04
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO19
     name: "&{Rele_name_5}"
-    id: relay_5
+    id: relay_05
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO26
     name: "&{Rele_name_6}"
-    id: relay_6
-    restore_mode: ALWAYS_OFF
-  - platform: gpio
-    pin: GPIO27
-    name: "&{Rele_name_7}"
-    id: relay_7
-    restore_mode: ALWAYS_OFF
-  - platform: gpio
-    pin: GPIO32
-    name: "&{Rele_name_8}"
-    id: relay_8
-    restore_mode: ALWAYS_OFF
-  - platform: gpio
-    pin: GPIO12
-    name: "Relay Heat"
-    id: relay_heat
-    restore_mode: ALWAYS_OFF
-  - platform: gpio
-    pin: GPIO13
-    name: "Relay Cool"
-    id: relay_cool
+    id: relay_06
     restore_mode: ALWAYS_OFF
