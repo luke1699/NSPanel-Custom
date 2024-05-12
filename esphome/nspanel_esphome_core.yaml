@@ -16,31 +16,6 @@ substitutions:
   temp_units: "°C"
   invalid_cooldown: "100ms"
   bytes_per_char: "1"
-  ## Change MAC Address of sensors ##
-  nome_stanza1: "Stanza 1"
-  temperatura_sensore1: "Temperatura Nodo 1"
-  umidita_sensore1: "Umidità Nodo 1"
-  nome_stanza2: "Stanza 2"
-  temperatura_sensore2: "Temperatura Nodo 2"
-  umidita_sensore2: "Umidità Nodo 2"
-  nome_stanza3: "Stanza 3"
-  temperatura_sensore3: "Temperatura Nodo 3"
-  umidita_sensore3: "Umidità Nodo 3"
-  nome_stanza4: "Stanza 4"
-  temperatura_sensore4: "Temperatura Nodo 4"
-  umidita_sensore4: "Umidità Nodo 4"
-  nome_stanza5: "Stanza 5"
-  temperatura_sensore5: "Temperatura Nodo 5"
-  umidita_sensore5: "Umidità Nodo 5"
-  nome_stanza6: "Stanza 6"
-  temperatura_sensore6: "Temperatura Nodo 6"
-  umidita_sensore6: "Umidità Nodo 6"
-  nome_stanza7: "Stanza 7"
-  temperatura_sensore7: "Temperatura Nodo 7"
-  umidita_sensore7: "Umidità Nodo 7"
-  nome_stanza8: "Stanza 8"
-  temperatura_sensore8: "Temperatura Nodo 8"
-  umidita_sensore8: "Umidità Nodo 8"
   ##### DON'T CHANGE THIS ######
   version: "4.3.7"
   ##############################
@@ -166,26 +141,6 @@ ota:
 
 ##### Adds custom library for NSPanel HA Blueprint project
 nspanel_ha_blueprint:
-
-##### Adds custom library for use ESPNow into ESPHome
-beethowen_receiver:
-  devices:
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza1}"
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza2}"
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza3}"
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza4}"
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza5}"
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza6}"
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza7}"
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza8}"
 
 ##### LOGGER #####
 logger:
