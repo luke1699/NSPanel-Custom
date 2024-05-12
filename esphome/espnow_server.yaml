@@ -35,6 +35,11 @@ substitutions:
   Rele_name_7: "Relè 7"
   Rele_name_8: "Relè 8"
 
+esphome:
+  platformio_options:
+    build_flags:
+      - -D ESPNOW_SERVER
+
 beethowen_receiver:
   devices:
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
