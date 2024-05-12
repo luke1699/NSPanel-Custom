@@ -78,6 +78,118 @@ climate:
       - lambda: |-
           page_climate->execute();
           page_home->execute();
+          
+  - platform: thermostat
+    name: "Termostato 1"
+    id: thermostat_1
+    visual:
+      min_temperature: ${temp_min} ${temp_units}
+      max_temperature: ${temp_max} ${temp_units}
+      temperature_step: 0.5   
+    sensor: temperature_1
+    min_idle_time:  ${min_idle_time}s
+    off_mode: 
+      - switch.turn_off: relay
+    idle_action: 
+      - switch.turn_off: relay
+  
+  - platform: thermostat
+    name: "Termostato 2"
+    id: thermostat_2
+    visual:
+      min_temperature: ${temp_min} ${temp_units}
+      max_temperature: ${temp_max} ${temp_units}
+      temperature_step: 0.5  
+    sensor: temperature_2
+    min_idle_time:  ${min_idle_time}s
+    off_mode: 
+      - switch.turn_off: relay_2
+    idle_action: 
+      - switch.turn_off: relay_2
+  
+  - platform: thermostat
+    name: "Termostato 3"
+    id: thermostat_3
+    visual:
+      min_temperature: ${temp_min} ${temp_units}
+      max_temperature: ${temp_max} ${temp_units}
+      temperature_step: 0.5
+    sensor: temperature_3
+    min_idle_time:  ${min_idle_time}s
+    off_mode: 
+      - switch.turn_off: relay_3
+    idle_action: 
+      - switch.turn_off: relay_3
+      
+  - platform: thermostat
+    name: "Termostato 4"
+    id: thermostat_4
+    visual:
+      min_temperature: ${temp_min} ${temp_units}
+      max_temperature: ${temp_max} ${temp_units}
+      temperature_step: 0.5
+    sensor: temperature_4
+    min_idle_time:  ${min_idle_time}s
+    off_mode: 
+      - switch.turn_off: relay_4
+    idle_action: 
+      - switch.turn_off: relay_4
+      
+  - platform: thermostat
+    name: "Termostato 5"
+    id: thermostat_5
+    visual:
+      min_temperature: ${temp_min} ${temp_units}
+      max_temperature: ${temp_max} ${temp_units}
+      temperature_step: 0.5
+    sensor: temperature_5
+    min_idle_time:  ${min_idle_time}s
+    off_mode: 
+      - switch.turn_off: relay_5
+    idle_action: 
+      - switch.turn_off: relay_5
+  
+  - platform: thermostat
+    name: "Termostato 6"
+    id: thermostat_6
+    visual:
+      min_temperature: ${temp_min} ${temp_units}
+      max_temperature: ${temp_max} ${temp_units}
+      temperature_step: 0.5
+    sensor: temperature_6
+    min_idle_time:  ${min_idle_time}s
+    off_mode: 
+      - switch.turn_off: relay_6
+    idle_action: 
+      - switch.turn_off: relay_6
+  
+  - platform: thermostat
+    name: "Termostato 7"
+    id: thermostat_7
+    visual:
+      min_temperature: ${temp_min} ${temp_units}
+      max_temperature: ${temp_max} ${temp_units}
+      temperature_step: 0.5
+    sensor: temperature_7
+    min_idle_time:  ${min_idle_time}s
+    off_mode: 
+      - switch.turn_off: relay_7
+    idle_action: 
+      - switch.turn_off: relay_7
+  
+  - platform: thermostat
+    name: "Termostato 8"
+    id: thermostat_8
+    visual:
+      min_temperature: ${temp_min} ${temp_units}
+      max_temperature: ${temp_max} ${temp_units}
+      temperature_step: 0.5
+    sensor: temperature_8
+    min_idle_time:  ${min_idle_time}s
+    off_mode: 
+      - switch.turn_off: relay_8
+    idle_action: 
+      - switch.turn_off: relay_8
 
 globals:
   ##### Is embedded thermostat visible on climate page? #####
