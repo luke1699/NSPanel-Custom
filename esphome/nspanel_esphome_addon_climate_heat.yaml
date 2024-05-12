@@ -27,7 +27,47 @@ climate:
     heat_deadband: ${heat_deadband} ${temp_units}
     heat_overrun: ${heat_overrun} ${temp_units}
     heat_action:
+      - switch.turn_on: relay
+      - switch.turn_on: relay_2
+      - switch.turn_on: relay_3
+      - switch.turn_on: relay_4
+      - switch.turn_on: relay_5
+      - switch.turn_on: relay_6
+      - switch.turn_on: relay_7
+      - switch.turn_on: relay_8
       - switch.turn_on: relay_${heater_relay}
+      - climate.control: 
+          id: thermostat_1
+          mode: HEAT
+          target_temperature: 21
+      - climate.control: 
+          id: thermostat_2
+          mode: HEAT
+          target_temperature: 21
+      - climate.control: 
+          id: thermostat_3
+          mode: HEAT
+          target_temperature: 21
+      - climate.control: 
+          id: thermostat_4
+          mode: HEAT
+          target_temperature: 21
+      - climate.control: 
+          id: thermostat_5
+          mode: HEAT
+          target_temperature: 21
+      - climate.control: 
+          id: thermostat_6
+          mode: HEAT
+          target_temperature: 21
+      - climate.control: 
+          id: thermostat_7
+          mode: HEAT
+          target_temperature: 21
+      - climate.control: 
+          id: thermostat_8
+          mode: HEAT
+          target_temperature: 21
     preset:
       - name: "Off"
         default_target_temperature_low: ${target_low} ${temp_units}
