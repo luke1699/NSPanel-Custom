@@ -50,25 +50,21 @@ climate:
         target_temperature: 0.5  # This is hard coded for now as ESPHome isn't supporting a substitution here. In contact with support.
         current_temperature: 0.1
     off_mode: 
-      - switch.turn_off: relay_1
-      - switch.turn_off: relay_2
-      - switch.turn_off: relay_3
-      - switch.turn_off: relay_4
-      - switch.turn_off: relay_5
-      - switch.turn_off: relay_6
-      - switch.turn_off: relay_7
-      - switch.turn_off: relay_8
+      - switch.turn_off: relay
+      - switch.turn_off: relay_02
+      - switch.turn_off: relay_03
+      - switch.turn_off: relay_04
+      - switch.turn_off: relay_05
+      - switch.turn_off: relay_06
       - switch.turn_off: relay_${heater_relay}
       - switch.turn_off: relay_${cooler_relay}
     idle_action:
-      - switch.turn_off: relay_1
-      - switch.turn_off: relay_2
-      - switch.turn_off: relay_3
-      - switch.turn_off: relay_4
-      - switch.turn_off: relay_5
-      - switch.turn_off: relay_6
-      - switch.turn_off: relay_7
-      - switch.turn_off: relay_8
+      - switch.turn_off: relay_01
+      - switch.turn_off: relay_02
+      - switch.turn_off: relay_03
+      - switch.turn_off: relay_04
+      - switch.turn_off: relay_05
+      - switch.turn_off: relay_06
       - switch.turn_off: relay_${heater_relay}
       - switch.turn_off: relay_${cooler_relay}
     default_preset: "Off"
@@ -87,7 +83,7 @@ climate:
       max_temperature: ${temp_max} ${temp_units}
       temperature_step: 0.5   
     sensor: temperature_1
-    min_idle_time:  ${min_idle_time}s
+    min_idle_time: ${min_idle_time}s
     off_mode: 
       - switch.turn_off: relay
     idle_action: 
@@ -101,11 +97,11 @@ climate:
       max_temperature: ${temp_max} ${temp_units}
       temperature_step: 0.5  
     sensor: temperature_2
-    min_idle_time:  ${min_idle_time}s
+    min_idle_time: ${min_idle_time}s
     off_mode: 
-      - switch.turn_off: relay_2
+      - switch.turn_off: relay_02
     idle_action: 
-      - switch.turn_off: relay_2
+      - switch.turn_off: relay_02
   
   - platform: thermostat
     name: "Termostato 3"
@@ -115,11 +111,11 @@ climate:
       max_temperature: ${temp_max} ${temp_units}
       temperature_step: 0.5
     sensor: temperature_3
-    min_idle_time:  ${min_idle_time}s
+    min_idle_time: ${min_idle_time}s
     off_mode: 
-      - switch.turn_off: relay_3
+      - switch.turn_off: relay_03
     idle_action: 
-      - switch.turn_off: relay_3
+      - switch.turn_off: relay_03
       
   - platform: thermostat
     name: "Termostato 4"
@@ -129,11 +125,11 @@ climate:
       max_temperature: ${temp_max} ${temp_units}
       temperature_step: 0.5
     sensor: temperature_4
-    min_idle_time:  ${min_idle_time}s
+    min_idle_time: ${min_idle_time}s
     off_mode: 
-      - switch.turn_off: relay_4
+      - switch.turn_off: relay_04
     idle_action: 
-      - switch.turn_off: relay_4
+      - switch.turn_off: relay_04
       
   - platform: thermostat
     name: "Termostato 5"
@@ -143,11 +139,11 @@ climate:
       max_temperature: ${temp_max} ${temp_units}
       temperature_step: 0.5
     sensor: temperature_5
-    min_idle_time:  ${min_idle_time}s
+    min_idle_time: ${min_idle_time}s
     off_mode: 
-      - switch.turn_off: relay_5
+      - switch.turn_off: relay_05
     idle_action: 
-      - switch.turn_off: relay_5
+      - switch.turn_off: relay_05
   
   - platform: thermostat
     name: "Termostato 6"
@@ -157,39 +153,11 @@ climate:
       max_temperature: ${temp_max} ${temp_units}
       temperature_step: 0.5
     sensor: temperature_6
-    min_idle_time:  ${min_idle_time}s
+    min_idle_time: ${min_idle_time}s
     off_mode: 
-      - switch.turn_off: relay_6
+      - switch.turn_off: relay_06
     idle_action: 
-      - switch.turn_off: relay_6
-  
-  - platform: thermostat
-    name: "Termostato 7"
-    id: thermostat_7
-    visual:
-      min_temperature: ${temp_min} ${temp_units}
-      max_temperature: ${temp_max} ${temp_units}
-      temperature_step: 0.5
-    sensor: temperature_7
-    min_idle_time:  ${min_idle_time}s
-    off_mode: 
-      - switch.turn_off: relay_7
-    idle_action: 
-      - switch.turn_off: relay_7
-  
-  - platform: thermostat
-    name: "Termostato 8"
-    id: thermostat_8
-    visual:
-      min_temperature: ${temp_min} ${temp_units}
-      max_temperature: ${temp_max} ${temp_units}
-      temperature_step: 0.5
-    sensor: temperature_8
-    min_idle_time:  ${min_idle_time}s
-    off_mode: 
-      - switch.turn_off: relay_8
-    idle_action: 
-      - switch.turn_off: relay_8
+      - switch.turn_off: relay_06
 
 globals:
   ##### Is embedded thermostat visible on climate page? #####
