@@ -29,16 +29,26 @@ climate:
     heat_overrun: ${heat_overrun} ${temp_units}
     cool_action:
       - switch.turn_on: relay_${cooler_relay}
+      - switch.turn_off: relay_${heater_relay}
     heat_action:
       - switch.turn_on: relay_${heater_relay}
+      - switch.turn_off: relay_${cooler_relay}
     preset:
       - name: "Off"
         default_target_temperature_high: ${target_high} ${temp_units}
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "off"
-      - name: Home
-        default_target_temperature_high: ${target_high} ${temp_units}
-        default_target_temperature_low: ${target_low} ${temp_units}
+      - name: Fuori Casa
+        default_target_temperature_low: 18
+        default_target_temperature_high: 27
+        mode: "heat_cool"
+      - name: Notturno
+        default_target_temperature_low: 18
+        default_target_temperature_high: 25
+        mode: "heat_cool"
+      - name: A Casa
+        default_target_temperature_low: 21
+        default_target_temperature_high: 25
         mode: "heat_cool"
 
 packages:
