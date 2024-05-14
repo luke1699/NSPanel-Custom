@@ -1846,32 +1846,32 @@ switch:
 
   ##### CONFIGURATION OF RELE BOARD ######
   - platform: gpio
-    pin: GPIO15
+    pin: GPIO19
     name: "&{Rele_name_1}"
     id: relay
     restore_mode: ALWAYS_OFF
   - platform: gpio
-    pin: GPIO16
+    pin: GPIO18
     name: "&{Rele_name_2}"
     id: relay_02
     restore_mode: ALWAYS_OFF
   - platform: gpio
-    pin: GPIO17
+    pin: GPIO32
     name: "&{Rele_name_3}"
     id: relay_03
     restore_mode: ALWAYS_OFF
   - platform: gpio
-    pin: GPIO18
+    pin: GPIO33
     name: "&{Rele_name_4}"
     id: relay_04
     restore_mode: ALWAYS_OFF
   - platform: gpio
-    pin: GPIO19
+    pin: GPIO04
     name: "&{Rele_name_5}"
     id: relay_05
     restore_mode: ALWAYS_OFF
   - platform: gpio
-    pin: GPIO26
+    pin: GPIO15
     name: "&{Rele_name_6}"
     id: relay_06
     restore_mode: ALWAYS_OFF
@@ -1917,7 +1917,7 @@ switch:
     platform: gpio
     id: relay_1
     pin:
-      number: 22
+      number: 02
     restore_mode: RESTORE_DEFAULT_OFF
     on_turn_on:
       then:
@@ -1938,7 +1938,7 @@ switch:
     platform: gpio
     id: relay_2
     pin:
-      number: 19
+      number: 13
     restore_mode: RESTORE_DEFAULT_OFF
     on_turn_on:
       then:
