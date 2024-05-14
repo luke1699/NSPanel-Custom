@@ -78,6 +78,120 @@ climate:
       - name: A Casa
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
+        
+  - id: !extend thermostat_1
+    min_heating_off_time: ${min_off_time}s
+    min_heating_run_time: ${min_run_time}s
+    heat_deadband: ${heat_deadband} ${temp_units}
+    heat_overrun: ${heat_overrun} ${temp_units}
+    heat_action:
+      - switch.turn_on: relay_${heater_relay}
+      - switch.turn_on: relay
+    preset:
+      - name: Fuori Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: Notturno
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: A Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+        
+  - id: !extend thermostat_2
+    min_heating_off_time: ${min_off_time}s
+    min_heating_run_time: ${min_run_time}s
+    heat_deadband: ${heat_deadband} ${temp_units}
+    heat_overrun: ${heat_overrun} ${temp_units}
+    heat_action:
+      - switch.turn_on: relay_${heater_relay}
+      - switch.turn_on: relay_02
+    preset:
+      - name: Fuori Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: Notturno
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: A Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+        
+  - id: !extend thermostat_3
+    min_heating_off_time: ${min_off_time}s
+    min_heating_run_time: ${min_run_time}s
+    heat_deadband: ${heat_deadband} ${temp_units}
+    heat_overrun: ${heat_overrun} ${temp_units}
+    heat_action:
+      - switch.turn_on: relay_${heater_relay}
+      - switch.turn_on: relay_03
+    preset:
+      - name: Fuori Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: Notturno
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: A Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+        
+  - id: !extend thermostat_4
+    min_heating_off_time: ${min_off_time}s
+    min_heating_run_time: ${min_run_time}s
+    heat_deadband: ${heat_deadband} ${temp_units}
+    heat_overrun: ${heat_overrun} ${temp_units}
+    heat_action:
+      - switch.turn_on: relay_${heater_relay}
+      - switch.turn_on: relay_04
+    preset:
+      - name: Fuori Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: Notturno
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: A Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+        
+  - id: !extend thermostat_5
+    min_heating_off_time: ${min_off_time}s
+    min_heating_run_time: ${min_run_time}s
+    heat_deadband: ${heat_deadband} ${temp_units}
+    heat_overrun: ${heat_overrun} ${temp_units}
+    heat_action:
+      - switch.turn_on: relay_${heater_relay}
+      - switch.turn_on: relay_05
+    preset:
+      - name: Fuori Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: Notturno
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: A Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+        
+  - id: !extend thermostat_6
+    min_heating_off_time: ${min_off_time}s
+    min_heating_run_time: ${min_run_time}s
+    heat_deadband: ${heat_deadband} ${temp_units}
+    heat_overrun: ${heat_overrun} ${temp_units}
+    heat_action:
+      - switch.turn_on: relay_${heater_relay}
+      - switch.turn_on: relay_06
+    preset:
+      - name: Fuori Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: Notturno
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
+      - name: A Casa
+        default_target_temperature_high: ${target_high} ${temp_units}
+        mode: "heat"
 
 packages:
   climate_base_package: !include nspanel_esphome_addon_climate_base.yaml
