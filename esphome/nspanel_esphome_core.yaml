@@ -1281,9 +1281,9 @@ binary_sensor:
             condition:
               binary_sensor.is_on: stato_riscaldamento
             then:
-              - switch.turn_on: relay_${heater_relay}
+              - switch.turn_on: relay_1
             else:
-              - switch.turn_off: relay_${heater_relay}
+              - switch.turn_off: relay_1
   - platform: template
     name: "Stato Raffrescamento"
     id: stato_raffrescamento
@@ -1300,9 +1300,9 @@ binary_sensor:
             condition:
               binary_sensor.is_on: stato_raffrescamento
             then:
-              - switch.turn_on: relay_${cooler_relay}
+              - switch.turn_on: relay_2
             else:
-              - switch.turn_off: relay_${cooler_relay}
+              - switch.turn_off: relay_2
 
   ###### LEFT BUTTON BELOW DISPLAY TO TOGGLE RELAY#####
   - name: Left Button
@@ -1842,7 +1842,6 @@ sensor:
 
 ##### START - SWITCH CONFIGURATION #####
 switch:
-
   ##### CONFIGURATION OF RELE BOARD ######
   - platform: gpio
     pin: GPIO19
