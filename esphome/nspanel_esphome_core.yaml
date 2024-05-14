@@ -19,6 +19,30 @@ substitutions:
   ##### DON'T CHANGE THIS ######
   version: "4.3.7"
   ##############################
+  ##### Change MAC ADDRESS Sensors ###########
+  nome_stanza1: "Stanza 1"
+  temperatura_sensore1: "Temperatura Nodo 1"
+  umidita_sensore1: "Umidità Nodo 1"
+  nome_stanza2: "Stanza 2"
+  temperatura_sensore2: "Temperatura Nodo 2"
+  umidita_sensore2: "Umidità Nodo 2"
+  nome_stanza3: "Stanza 3"
+  temperatura_sensore3: "Temperatura Nodo 3"
+  umidita_sensore3: "Umidità Nodo 3"
+  nome_stanza4: "Stanza 4"
+  temperatura_sensore4: "Temperatura Nodo 4"
+  umidita_sensore4: "Umidità Nodo 4"
+  nome_stanza5: "Stanza 5"
+  temperatura_sensore5: "Temperatura Nodo 5"
+  umidita_sensore5: "Umidità Nodo 5"
+  nome_stanza6: "Stanza 6"
+  ######## Settings Relè ############
+  Rele_name_1: "Relè 1"
+  Rele_name_2: "Relè 2"
+  Rele_name_3: "Relè 3"
+  Rele_name_4: "Relè 4"
+  Rele_name_5: "Relè 5"
+  Rele_name_6: "Relè 6"
 
 ##### External components #####
 external_components:
@@ -146,6 +170,22 @@ nspanel_ha_blueprint:
 logger:
   id: logger_std
   baud_rate: 0
+  
+##### Configuration ESPNow Nodes #####
+beethowen_receiver:
+  devices:
+    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+      name_prefix: "&{nome_stanza1}"
+    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+      name_prefix: "&{nome_stanza2}"
+    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+      name_prefix: "&{nome_stanza3}"
+    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+      name_prefix: "&{nome_stanza4}"
+    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+      name_prefix: "&{nome_stanza5}"
+    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+      name_prefix: "&{nome_stanza6}"
 
 ##### ENABLE RINGTONE MUSIC SUPPORT #####
 rtttl:
@@ -1224,6 +1264,46 @@ globals:
 
 ##### START - BINARY SENSOR CONFIGURATION #####
 binary_sensor:
+  
+  ###### Configuration of state cooling or heating ############
+  - platform: template
+    name: "Stato Riscaldamento"
+    id: stato_riscaldamento
+    device_class: heat
+    lambda: |-
+      if ((id(thermostat_1).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_2).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_3).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_4).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_5).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_6).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT)) {
+        return true;
+      } else {
+        return false;
+      }
+    on_state:
+      then:
+        - if:
+            condition:
+              binary_sensor.is_on: stato_riscaldamento
+            then:
+              - switch.turn_on: relay_${heater_relay}
+            else:
+              - switch.turn_off: relay_${heater_relay}
+  - platform: template
+    name: "Stato Raffrescamento"
+    id: stato_raffrescamento
+    device_class: cold
+    lambda: |-
+      if ((id(thermostat_1).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_2).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_3).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_4).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_5).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_6).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL)) {
+        return true;
+      } else {
+        return false;
+      }
+    on_state:
+      then:
+        - if:
+            condition:
+              binary_sensor.is_on: stato_raffrescamento
+            then:
+              - switch.turn_on: relay_${cooler_relay}
+            else:
+              - switch.turn_off: relay_${cooler_relay}
 
   ###### LEFT BUTTON BELOW DISPLAY TO TOGGLE RELAY#####
   - name: Left Button
@@ -1535,6 +1615,93 @@ select:
 
 ##### START - SENSOR CONFIGURATION #####
 sensor:
+  - platform: template
+    id: tempmedium
+    name: "Temperatura Media ${name_1}"
+    lambda: return ((id(temperature_1).state + id(temperature_2) + id(temperature_3) + id(temperature_4) + id(temperature_5) + id(temperature_6) /6);
+    update_interval: 10s
+    device_class: "temperature"
+    state_class: "measurement"
+    accuracy_decimals: 1
+    unit_of_measurement: "°C"
+  ########### configurazione nodo 1 sensori #################
+  - platform: beethowen_receiver
+    mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 1
+    sensors:
+    - measurement_type: 0x02
+      id: temperature_1
+      name: "&{temperatura_sensore1}"
+      accuracy_decimals: 2
+      unit_of_measurement: "°C"
+    - measurement_type: 0x03
+      name: "&{umidita_sensore1}"
+      accuracy_decimals: 0
+      unit_of_measurement: "%"
+  ########### configurazione nodo 2 sensori #################
+  - platform: beethowen_receiver
+    mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 2
+    sensors:
+    - measurement_type: 0x02
+      id: temperature_2
+      name: "&{temperatura_sensore2}"
+      accuracy_decimals: 2
+      unit_of_measurement: "°C"
+    - measurement_type: 0x03
+      name: "&{umidita_sensore2}"
+      accuracy_decimals: 0
+      unit_of_measurement: "%"
+  ########### configurazione nodo 3 sensori #################
+  - platform: beethowen_receiver
+    mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 3
+    sensors:
+    - measurement_type: 0x02
+      id: temperature_3
+      name: "&{temperatura_sensore3}"
+      accuracy_decimals: 2
+      unit_of_measurement: "°C"
+    - measurement_type: 0x03
+      name: "&{umidita_sensore3}"
+      accuracy_decimals: 0
+      unit_of_measurement: "%"
+  ########### configurazione nodo 4 sensori #################
+  - platform: beethowen_receiver
+    mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 4
+    sensors:
+    - measurement_type: 0x02
+      id: temperature_4
+      name: "&{temperatura_sensore4}"
+      accuracy_decimals: 2
+      unit_of_measurement: "°C"
+    - measurement_type: 0x03
+      name: "&{umidita_sensore4}"
+      accuracy_decimals: 0
+      unit_of_measurement: "%"
+  ########### configurazione nodo 5 sensori #################
+  - platform: beethowen_receiver
+    mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 5
+    sensors:
+    - measurement_type: 0x02
+      id: temperature_5
+      name: "&{temperatura_sensore5}"
+      accuracy_decimals: 2
+      unit_of_measurement: "°C"
+    - measurement_type: 0x03
+      name: "&{umidita_sensore5}"
+      accuracy_decimals: 0
+      unit_of_measurement: "%"
+  ########### configurazione nodo 6 sensori #################
+  - platform: beethowen_receiver
+    mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 6
+    sensors:
+    - measurement_type: 0x02
+      id: temperature_6
+      name: "&{temperatura_sensore6}"
+      accuracy_decimals: 2
+      unit_of_measurement: "°C"
+    - measurement_type: 0x03
+      name: "&{umidita_sensore6}"
+      accuracy_decimals: 0
+      unit_of_measurement: "%"
   ##### Blueprint status #####
   # Bit # Settings step        #
   #  0  # reserved             #
@@ -1676,6 +1843,39 @@ sensor:
 
 ##### START - SWITCH CONFIGURATION #####
 switch:
+
+  ##### CONFIGURATION OF RELE BOARD ######
+  - platform: gpio
+    pin: GPIO15
+    name: "&{Rele_name_1}"
+    id: relay
+    restore_mode: ALWAYS_OFF
+  - platform: gpio
+    pin: GPIO16
+    name: "&{Rele_name_2}"
+    id: relay_02
+    restore_mode: ALWAYS_OFF
+  - platform: gpio
+    pin: GPIO17
+    name: "&{Rele_name_3}"
+    id: relay_03
+    restore_mode: ALWAYS_OFF
+  - platform: gpio
+    pin: GPIO18
+    name: "&{Rele_name_4}"
+    id: relay_04
+    restore_mode: ALWAYS_OFF
+  - platform: gpio
+    pin: GPIO19
+    name: "&{Rele_name_5}"
+    id: relay_05
+    restore_mode: ALWAYS_OFF
+  - platform: gpio
+    pin: GPIO26
+    name: "&{Rele_name_6}"
+    id: relay_06
+    restore_mode: ALWAYS_OFF
+
   ##### Notification unread #####
   - name: Notification unread
     platform: template
