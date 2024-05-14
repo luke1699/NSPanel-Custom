@@ -209,4 +209,7 @@ switch:
     name: "&{Rele_name_6}"
     id: relay_06
     restore_mode: ALWAYS_OFF
+
+packages:
+  core_package: !include esphome/nspanel_esphome_core.yaml
 ...
