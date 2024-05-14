@@ -2,4 +2,5 @@
 packages:
   core_package: !include esphome/nspanel_esphome_core.yaml
   upload_tft_package: !include esphome/nspanel_esphome_addon_upload_tft.yaml
+  nspanel_espnow: !include esphome/espnow_server.yaml
 ...
