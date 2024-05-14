@@ -1264,7 +1264,6 @@ globals:
 
 ##### START - BINARY SENSOR CONFIGURATION #####
 binary_sensor:
-  
   ###### Configuration of state cooling or heating ############
   - platform: template
     name: "Stato Riscaldamento"
