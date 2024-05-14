@@ -33,8 +33,6 @@ climate:
       - switch.turn_on: relay_4
       - switch.turn_on: relay_5
       - switch.turn_on: relay_6
-      - switch.turn_on: relay_7
-      - switch.turn_on: relay_8
       - switch.turn_on: relay_${heater_relay}
       - climate.control: 
           id: thermostat_1
