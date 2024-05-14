@@ -61,13 +61,13 @@ climate:
     preset:
       - name: Fuori Casa
         default_target_temperature_high: ${target_high} ${temp_units}
-        mode: " "cool""
+        mode: "cool"
       - name: Notturno
         default_target_temperature_high: ${target_high} ${temp_units}
-        mode: " "cool""
+        mode: "cool"
       - name: A Casa
         default_target_temperature_high: ${target_high} ${temp_units}
-        mode: " "cool""
+        mode: "cool"
         
   - id: !extend thermostat_1
     min_cooling_off_time: ${min_off_time}s
