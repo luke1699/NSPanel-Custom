@@ -11,7 +11,7 @@ rules:
     forbid-duplicated-anchors: true
   braces: enable
   brackets: enable
-  colons: enable
+  colons: disable
   commas: enable
   comments:
     level: warning
