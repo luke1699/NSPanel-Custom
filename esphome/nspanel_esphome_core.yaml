@@ -1,3 +1,4 @@
+
 #####################################################################################################
 ##### NSPANEL ESPHOME created by Blackymas - https://github.com/Blackymas/NSPanel_HA_Blueprint  #####
 ##### ESPHOME CORE                                                                              #####
@@ -135,7 +136,7 @@ esphome:
 esp32:
   board: esp32dev
   framework:
-    type: esp-idf
+    type: arduino #esp-idf
 
 psram:
   id: ext_ram
@@ -1311,7 +1312,7 @@ binary_sensor:
     platform: gpio
     id: right_button
     pin:
-      number: 27
+      number: 34
       inverted: true
     on_multi_click:
       - timing: *long_click-timing
