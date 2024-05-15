@@ -1627,80 +1627,80 @@ sensor:
   - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 1
     sensors:
-    - measurement_type: 0x02
-      id: temperature_1
-      name: "&{temperatura_sensore1}"
-      accuracy_decimals: 2
-      unit_of_measurement: "°C"
-    - measurement_type: 0x03
-      name: "&{umidita_sensore1}"
-      accuracy_decimals: 0
-      unit_of_measurement: "%"
+      - measurement_type: 0x02
+        id: temperature_1
+        name: "&{temperatura_sensore1}"
+        accuracy_decimals: 2
+        unit_of_measurement: "°C"
+      - measurement_type: 0x03
+        name: "&{umidita_sensore1}"
+        accuracy_decimals: 0
+        unit_of_measurement: "%"
   ########### configurazione nodo 2 sensori #################
   - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 2
     sensors:
-    - measurement_type: 0x02
-      id: temperature_2
-      name: "&{temperatura_sensore2}"
-      accuracy_decimals: 2
-      unit_of_measurement: "°C"
-    - measurement_type: 0x03
-      name: "&{umidita_sensore2}"
-      accuracy_decimals: 0
-      unit_of_measurement: "%"
+      - measurement_type: 0x02
+        id: temperature_2
+        name: "&{temperatura_sensore2}"
+        accuracy_decimals: 2
+        unit_of_measurement: "°C"
+      - measurement_type: 0x03
+        name: "&{umidita_sensore2}"
+        accuracy_decimals: 0
+        unit_of_measurement: "%"
   ########### configurazione nodo 3 sensori #################
   - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 3
     sensors:
-    - measurement_type: 0x02
-      id: temperature_3
-      name: "&{temperatura_sensore3}"
-      accuracy_decimals: 2
-      unit_of_measurement: "°C"
-    - measurement_type: 0x03
-      name: "&{umidita_sensore3}"
-      accuracy_decimals: 0
-      unit_of_measurement: "%"
+      - measurement_type: 0x02
+        id: temperature_3
+        name: "&{temperatura_sensore3}"
+        accuracy_decimals: 2
+        unit_of_measurement: "°C"
+      - measurement_type: 0x03
+        name: "&{umidita_sensore3}"
+        accuracy_decimals: 0
+        unit_of_measurement: "%"
   ########### configurazione nodo 4 sensori #################
   - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 4
     sensors:
-    - measurement_type: 0x02
-      id: temperature_4
-      name: "&{temperatura_sensore4}"
-      accuracy_decimals: 2
-      unit_of_measurement: "°C"
-    - measurement_type: 0x03
-      name: "&{umidita_sensore4}"
-      accuracy_decimals: 0
-      unit_of_measurement: "%"
+      - measurement_type: 0x02
+        id: temperature_4
+        name: "&{temperatura_sensore4}"
+        accuracy_decimals: 2
+        unit_of_measurement: "°C"
+      - measurement_type: 0x03
+        name: "&{umidita_sensore4}"
+        accuracy_decimals: 0
+        unit_of_measurement: "%"
   ########### configurazione nodo 5 sensori #################
   - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 5
     sensors:
-    - measurement_type: 0x02
-      id: temperature_5
-      name: "&{temperatura_sensore5}"
-      accuracy_decimals: 2
-      unit_of_measurement: "°C"
-    - measurement_type: 0x03
-      name: "&{umidita_sensore5}"
-      accuracy_decimals: 0
-      unit_of_measurement: "%"
+      - measurement_type: 0x02
+        id: temperature_5
+        name: "&{temperatura_sensore5}"
+        accuracy_decimals: 2
+        unit_of_measurement: "°C"
+      - measurement_type: 0x03
+        name: "&{umidita_sensore5}"
+        accuracy_decimals: 0
+        unit_of_measurement: "%"
   ########### configurazione nodo 6 sensori #################
   - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 6
     sensors:
-    - measurement_type: 0x02
-      id: temperature_6
-      name: "&{temperatura_sensore6}"
-      accuracy_decimals: 2
-      unit_of_measurement: "°C"
-    - measurement_type: 0x03
-      name: "&{umidita_sensore6}"
-      accuracy_decimals: 0
-      unit_of_measurement: "%"
+      - measurement_type: 0x02
+        id: temperature_6
+        name: "&{temperatura_sensore6}"
+        accuracy_decimals: 2
+        unit_of_measurement: "°C"
+      - measurement_type: 0x03
+        name: "&{umidita_sensore6}"
+        accuracy_decimals: 0
+        unit_of_measurement: "%"
   ##### Blueprint status #####
   # Bit # Settings step        #
   #  0  # reserved             #
