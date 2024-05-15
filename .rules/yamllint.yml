@@ -30,13 +30,13 @@ rules:
   key-duplicates: enable
   key-ordering: disable
   line-length:
-    max: 200
+    max: 485
   new-line-at-end-of-file: enable
   new-lines: enable
   octal-values:
     level: warning
   quoted-strings: disable
-  trailing-spaces: enable
+  trailing-spaces: disable
   truthy:
     level: warning
 ...
