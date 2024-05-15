@@ -1835,7 +1835,7 @@ switch:
     id: relay_02
     restore_mode: ALWAYS_OFF
   - platform: gpio
-    pin: GPIO35
+    pin: GPIO32
     name: "&{Rele_name_3}"
     id: relay_03
     restore_mode: ALWAYS_OFF
@@ -1940,7 +1940,7 @@ switch:
     id: screen_power
     entity_category: diagnostic
     pin:
-      number: 32
+      number: 35
       inverted: true
     restore_mode: ALWAYS_ON
     internal: true
