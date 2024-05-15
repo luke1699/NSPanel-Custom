@@ -1598,7 +1598,7 @@ sensor:
   - platform: template
     id: tempmedium
     name: "Temperatura Media"
-    lambda: return ((id(temperature_1).state + id(temperature_2) + id(temperature_3) + id(temperature_4) + id(temperature_5) + id(temperature_6) /6));
+    lambda: return ((id(temperature_1).state + id(temperature_2) + id(temperature_3) + id(temperature_4) + id(temperature_5) + id(temperature_6)) /6);
     update_interval: 10s
     device_class: "temperature"
     state_class: "measurement"
