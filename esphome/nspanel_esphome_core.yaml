@@ -1,4 +1,3 @@
-
 #####################################################################################################
 ##### NSPANEL ESPHOME created by Blackymas - https://github.com/Blackymas/NSPanel_HA_Blueprint  #####
 ##### ESPHOME CORE                                                                              #####
@@ -187,6 +186,12 @@ beethowen_receiver:
       name_prefix: "&{nome_stanza5}"
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
       name_prefix: "&{nome_stanza6}"
+
+##### COnfiguration DALLAS Sensors ####
+dallas:
+  - pin: GPIO27
+  - pin: GPIO25
+  - pin: GPIO26
 
 ##### ENABLE RINGTONE MUSIC SUPPORT #####
 rtttl:
