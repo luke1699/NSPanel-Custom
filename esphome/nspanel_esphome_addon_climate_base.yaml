@@ -171,6 +171,47 @@ globals:
     restore_value: false
     initial_value: '"${name} Thermostat"'
 
+binary_sensor:
+  ###### Configuration of state cooling or heating ############
+  - platform: template
+    name: "Stato Riscaldamento"
+    id: stato_riscaldamento
+    device_class: heat
+    lambda: |-
+      if ((id(thermostat_1).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_2).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_3).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_4).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_5).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT) || (id(thermostat_6).mode == esphome::climate::ClimateMode::CLIMATE_MODE_HEAT)) {
+        return true;
+      } else {
+        return false;
+      }
+    on_state:
+      then:
+        - if:
+            condition:
+              binary_sensor.is_on: stato_riscaldamento
+            then:
+              - switch.turn_on: relay_1
+            else:
+              - switch.turn_off: relay_1
+  - platform: template
+    name: "Stato Raffrescamento"
+    id: stato_raffrescamento
+    device_class: cold
+    lambda: |-
+      if ((id(thermostat_1).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_2).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_3).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_4).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_5).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL) || (id(thermostat_6).mode == esphome::climate::ClimateMode::CLIMATE_MODE_COOL)) {
+        return true;
+      } else {
+        return false;
+      }
+    on_state:
+      then:
+        - if:
+            condition:
+              binary_sensor.is_on: stato_raffrescamento
+            then:
+              - switch.turn_on: relay_2
+            else:
+              - switch.turn_off: relay_2
+
 switch:
   ##### PHYSICAL SWITCH 0 (Dummy) - Used when relay is not set #####
   - name: Relay 0 (dummy)
