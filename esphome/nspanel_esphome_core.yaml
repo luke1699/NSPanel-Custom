@@ -189,9 +189,12 @@ beethowen_receiver:
 
 ##### COnfiguration DALLAS Sensors ####
 dallas:
-  - pin: GPIO27
   - pin: GPIO25
+    id: collector_delivery_temperature
   - pin: GPIO26
+    id: collector_return_temperature
+  - pin: GPIO27
+    id: room_temperature
 
 ##### ENABLE RINGTONE MUSIC SUPPORT #####
 rtttl:
@@ -1580,9 +1583,21 @@ select:
 
 ##### START - SENSOR CONFIGURATION #####
 sensor:
+  - platform: dallas
+    dallas_id: collector_delivery_temperature
+    address: 0x1C0000031EDD2A28
+    name: "Temperatura Mandata Collettore"
+  - platform: dallas
+    dallas_id: collector_return_temperature
+    address: 0x1C0000031EDD2A28
+    name: "Temperatura Ritorno Collettore"
+  - platform: dallas
+    dallas_id: room_temperature
+    address: 0x1C0000031EDD2A28
+    name: "Temperatura Stanza"
   - platform: template
     id: tempmedium
-    name: "Temperatura Media ${name_1}"
+    name: "Temperatura Media"
     lambda: return ((id(temperature_1).state + id(temperature_2) + id(temperature_3) + id(temperature_4) + id(temperature_5) + id(temperature_6) /6);
     update_interval: 10s
     device_class: "temperature"
