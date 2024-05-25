@@ -133,7 +133,7 @@ esphome:
         - switch.turn_off: screen_power
 
 esp32:
-  board: esp32dev
+  board: esp32-s3-devkitc-1 #esp32dev
   framework:
     type: arduino #esp-idf
 
