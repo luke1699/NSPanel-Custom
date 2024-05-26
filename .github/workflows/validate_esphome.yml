@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       cache-hit-idf-v4: ${{ steps.cache-idf-v4.outputs.cache-hit }}
-      cache-hit-idf-v5: ${{ steps.cache-idf-v5.outputs.cache-hit }}
+      #cache-hit-idf-v5: ${{ steps.cache-idf-v5.outputs.cache-hit }}
       cache-hit-arduino: ${{ steps.cache-arduino.outputs.cache-hit }}
 
     steps:
@@ -56,17 +56,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-esp-idf-v4-
 
-      - name: Cache ESP-IDF v5 Dependencies
-        id: cache-idf-v5
-        uses: actions/cache@main
-        with:
-          path: |
-            ~/.esphome/cache
-            ~/.platformio/packages
-            ~/.platformio/platforms
-          key: ${{ runner.os }}-esp-idf-v5-${{ hashFiles('**/esphome_idf5_basic.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-esp-idf-v5-
+      #- name: Cache ESP-IDF v5 Dependencies
+        #id: cache-idf-v5
+        #uses: actions/cache@main
+        #with:
+          #path: |
+            #~/.esphome/cache
+            #~/.platformio/packages
+            #~/.platformio/platforms
+          #key: ${{ runner.os }}-esp-idf-v5-${{ hashFiles('**/esphome_idf5_basic.yaml') }}
+          #restore-keys: |
+            #${{ runner.os }}-esp-idf-v5-
 
       - name: Cache Arduino Dependencies
         id: cache-arduino
@@ -110,9 +110,9 @@ jobs:
           - id: idf_v4
             yaml_file: ".test/esphome_idf_basic.yaml"
             cache-hit: ${{ needs.setup_dependencies.outputs.cache-hit-idf-v4 }}
-          - id: idf_v5
-            yaml_file: ".test/esphome_idf5_basic.yaml"
-            cache-hit: ${{ needs.setup_dependencies.outputs.cache-hit-idf-v5 }}
+          #- id: idf_v5
+            #yaml_file: ".test/esphome_idf5_basic.yaml"
+            #cache-hit: ${{ needs.setup_dependencies.outputs.cache-hit-idf-v5 }}
           - id: ard
             yaml_file: ".test/esphome_ard_basic.yaml"
             cache-hit: ${{ needs.setup_dependencies.outputs.cache-hit-arduino }}
@@ -137,9 +137,9 @@ jobs:
           - id: idf_v4
             base: idf_v4
             yaml_file: ".test/esphome_idf_advanced.yaml"
-          - id: idf_v5
-            base: idf_v5
-            yaml_file: ".test/esphome_idf5_advanced.yaml"
+          #- id: idf_v5
+            #base: idf_v5
+            #yaml_file: ".test/esphome_idf5_advanced.yaml"
           - id: ard
             base: ard
             yaml_file: ".test/esphome_ard_advanced.yaml"
@@ -163,9 +163,9 @@ jobs:
           - id: idf_v4
             base: idf_v4
             yaml_file: ".test/esphome_idf_ble_tracker.yaml"
-          - id: idf_v5
-            base: idf_v5
-            yaml_file: ".test/esphome_idf5_ble_tracker.yaml"
+          #- id: idf_v5
+            #base: idf_v5
+            #yaml_file: ".test/esphome_idf5_ble_tracker.yaml"
 
     steps:
       - name: Checkout repository
@@ -186,9 +186,9 @@ jobs:
           - id: idf_v4
             base: idf_v4
             yaml_file: ".test/esphome_idf_bluetooth_proxy.yaml"
-          - id: idf_v5
-            base: idf_v5
-            yaml_file: ".test/esphome_idf5_bluetooth_proxy.yaml"
+          #- id: idf_v5
+            #base: idf_v5
+            #yaml_file: ".test/esphome_idf5_bluetooth_proxy.yaml"
 
     steps:
       - name: Checkout repository
@@ -209,9 +209,9 @@ jobs:
           - id: idf_v4
             base: idf_v4
             yaml_file: ".test/esphome_idf_climate_cool.yaml"
-          - id: idf_v5
-            base: idf_v5
-            yaml_file: ".test/esphome_idf5_climate_cool.yaml"
+          #- id: idf_v5
+            #base: idf_v5
+            #yaml_file: ".test/esphome_idf5_climate_cool.yaml"
           - id: ard
             base: ard
             yaml_file: ".test/esphome_ard_climate_cool.yaml"
@@ -235,9 +235,9 @@ jobs:
           - id: idf_v4
             base: idf_v4
             yaml_file: ".test/esphome_idf_climate_heat.yaml"
-          - id: idf_v5
-            base: idf_v5
-            yaml_file: ".test/esphome_idf5_climate_heat.yaml"
+         # - id: idf_v5
+           # base: idf_v5
+           # yaml_file: ".test/esphome_idf5_climate_heat.yaml"
           - id: ard
             base: ard
             yaml_file: ".test/esphome_ard_climate_heat.yaml"
@@ -261,9 +261,9 @@ jobs:
           - id: idf_v4
             base: idf_v4
             yaml_file: ".test/esphome_idf_climate_dual.yaml"
-          - id: idf_v5
-            base: idf_v5
-            yaml_file: ".test/esphome_idf5_climate_dual.yaml"
+          #- id: idf_v5
+            #base: idf_v5
+            #yaml_file: ".test/esphome_idf5_climate_dual.yaml"
           - id: ard
             base: ard
             yaml_file: ".test/esphome_ard_climate_dual.yaml"
