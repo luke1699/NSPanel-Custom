@@ -58,13 +58,16 @@ climate:
           mode: HEAT
           target_temperature: 21
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
         
@@ -77,13 +80,16 @@ climate:
       - switch.turn_on: relay_${heater_relay}
       - switch.turn_on: relay
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
         
@@ -96,13 +102,16 @@ climate:
       - switch.turn_on: relay_${heater_relay}
       - switch.turn_on: relay_02
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
         
@@ -115,13 +124,16 @@ climate:
       - switch.turn_on: relay_${heater_relay}
       - switch.turn_on: relay_03
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
         
@@ -134,13 +146,16 @@ climate:
       - switch.turn_on: relay_${heater_relay}
       - switch.turn_on: relay_04
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
         
@@ -153,13 +168,16 @@ climate:
       - switch.turn_on: relay_${heater_relay}
       - switch.turn_on: relay_05
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
         
@@ -172,13 +190,16 @@ climate:
       - switch.turn_on: relay_${heater_relay}
       - switch.turn_on: relay_06
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_low: ${target_low} ${temp_units}
         mode: "heat"
 
