@@ -59,13 +59,16 @@ climate:
           mode:  "cool"
           target_temperature: 25
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
         
@@ -78,13 +81,16 @@ climate:
       - switch.turn_on: relay_${cooler_relay}
       - switch.turn_on: relay
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
         
@@ -98,13 +104,16 @@ climate:
       - switch.turn_off: relay_${heater_relay}
       - switch.turn_on: relay_02
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
         
@@ -117,13 +126,16 @@ climate:
       - switch.turn_on: relay_${cooler_relay}
       - switch.turn_on: relay_03
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
         
@@ -136,13 +148,16 @@ climate:
       - switch.turn_on: relay_${cooler_relay}
       - switch.turn_on: relay_04
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
         
@@ -155,13 +170,16 @@ climate:
       - switch.turn_on: relay_${cooler_relay}
       - switch.turn_on: relay_05
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
         
@@ -174,13 +192,16 @@ climate:
       - switch.turn_on: relay_${cooler_relay}
       - switch.turn_on: relay_06
     preset:
-      - name: Fuori Casa
+      - name: "Off"
+        default_target_temperature_low: ${target_low} ${temp_units}
+        mode: "off"
+      - name: "Fuori Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: Notturno
+      - name: "Notturno"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
-      - name: A Casa
+      - name: "A Casa"
         default_target_temperature_high: ${target_high} ${temp_units}
         mode: "cool"
 
