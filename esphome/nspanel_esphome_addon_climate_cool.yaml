@@ -115,7 +115,6 @@ climate:
     cool_overrun: ${cool_overrun} ${temp_units}
     cool_action:
       - switch.turn_on: relay_${cooler_relay}
-      - switch.turn_off: relay_${heater_relay}
       - switch.turn_on: relay_03
     preset:
       - name: Fuori Casa
@@ -135,7 +134,6 @@ climate:
     cool_overrun: ${cool_overrun} ${temp_units}
     cool_action:
       - switch.turn_on: relay_${cooler_relay}
-      - switch.turn_off: relay_${heater_relay}
       - switch.turn_on: relay_04
     preset:
       - name: Fuori Casa
@@ -155,7 +153,6 @@ climate:
     cool_overrun: ${cool_overrun} ${temp_units}
     cool_action:
       - switch.turn_on: relay_${cooler_relay}
-      - switch.turn_off: relay_${heater_relay}
       - switch.turn_on: relay_05
     preset:
       - name: Fuori Casa
@@ -175,7 +172,6 @@ climate:
     cool_overrun: ${cool_overrun} ${temp_units}
     cool_action:
       - switch.turn_on: relay_${cooler_relay}
-      - switch.turn_off: relay_${heater_relay}
       - switch.turn_on: relay_06
     preset:
       - name: Fuori Casa
