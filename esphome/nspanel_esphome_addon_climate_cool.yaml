@@ -28,11 +28,11 @@ climate:
     cool_overrun: ${cool_overrun} ${temp_units}
     cool_action:
       - switch.turn_on: relay
-      - switch.turn_on: relay_2
-      - switch.turn_on: relay_3
-      - switch.turn_on: relay_4
-      - switch.turn_on: relay_5
-      - switch.turn_on: relay_6
+      - switch.turn_on: relay_02
+      - switch.turn_on: relay_03
+      - switch.turn_on: relay_04
+      - switch.turn_on: relay_05
+      - switch.turn_on: relay_06
       - switch.turn_on: relay_${cooler_relay}
       - climate.control: 
           id: thermostat_1
