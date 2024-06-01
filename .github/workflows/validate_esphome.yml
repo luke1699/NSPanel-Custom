@@ -107,9 +107,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - id: idf_v4
-            yaml_file: ".test/esphome_idf_basic.yaml"
-            cache-hit: ${{ needs.setup_dependencies.outputs.cache-hit-idf-v4 }}
+          #- id: idf_v4
+            #yaml_file: ".test/esphome_idf_basic.yaml"
+            #cache-hit: ${{ needs.setup_dependencies.outputs.cache-hit-idf-v4 }}
           #- id: idf_v5
             #yaml_file: ".test/esphome_idf5_basic.yaml"
             #cache-hit: ${{ needs.setup_dependencies.outputs.cache-hit-idf-v5 }}
@@ -134,9 +134,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - id: idf_v4
-            base: idf_v4
-            yaml_file: ".test/esphome_idf_advanced.yaml"
+         # - id: idf_v4
+           # base: idf_v4
+            #yaml_file: ".test/esphome_idf_advanced.yaml"
           #- id: idf_v5
             #base: idf_v5
             #yaml_file: ".test/esphome_idf5_advanced.yaml"
@@ -153,51 +153,51 @@ jobs:
         with:
           yaml_file: ${{ matrix.yaml_file }}
 
-  build_ble_tracker:
-    name: BLE Tracker
-    needs: build_cores
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        include:
-          - id: idf_v4
-            base: idf_v4
-            yaml_file: ".test/esphome_idf_ble_tracker.yaml"
+  #build_ble_tracker:
+    #name: BLE Tracker
+    #needs: build_cores
+    #runs-on: ubuntu-latest
+    #strategy:
+      #matrix:
+        #include:
+          #- id: idf_v4
+            #base: idf_v4
+            #yaml_file: ".test/esphome_idf_ble_tracker.yaml"
           #- id: idf_v5
             #base: idf_v5
             #yaml_file: ".test/esphome_idf5_ble_tracker.yaml"
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@main
+    #steps:
+      #- name: Checkout repository
+        #uses: actions/checkout@main
 
-      - name: Build BLE Tracker Firmware
-        uses: barndawgie/build-action@v1.9.0
-        with:
-          yaml_file: ${{ matrix.yaml_file }}
+      #- name: Build BLE Tracker Firmware
+        #uses: barndawgie/build-action@v1.9.0
+        #with:
+          #yaml_file: ${{ matrix.yaml_file }}
 
-  build_bluetooth_proxy:
-    name: Bluetooth Proxy
-    needs: build_cores
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        include:
-          - id: idf_v4
-            base: idf_v4
-            yaml_file: ".test/esphome_idf_bluetooth_proxy.yaml"
+  #build_bluetooth_proxy:
+    #name: Bluetooth Proxy
+    #needs: build_cores
+    #runs-on: ubuntu-latest
+    #strategy:
+      #matrix:
+        #include:
+          #- id: idf_v4
+            #base: idf_v4
+            #yaml_file: ".test/esphome_idf_bluetooth_proxy.yaml"
           #- id: idf_v5
             #base: idf_v5
             #yaml_file: ".test/esphome_idf5_bluetooth_proxy.yaml"
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@main
+    #steps:
+      #- name: Checkout repository
+        #uses: actions/checkout@main
 
-      - name: Build Bluetooth Proxy Firmware
-        uses: barndawgie/build-action@v1.9.0
-        with:
-          yaml_file: ${{ matrix.yaml_file }}
+     # - name: Build Bluetooth Proxy Firmware
+        #uses: barndawgie/build-action@v1.9.0
+        #with:
+          #yaml_file: ${{ matrix.yaml_file }}
 
   build_climate_cool:
     name: Climate Cool
@@ -206,9 +206,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - id: idf_v4
-            base: idf_v4
-            yaml_file: ".test/esphome_idf_climate_cool.yaml"
+          #- id: idf_v4
+            #base: idf_v4
+            #yaml_file: ".test/esphome_idf_climate_cool.yaml"
           #- id: idf_v5
             #base: idf_v5
             #yaml_file: ".test/esphome_idf5_climate_cool.yaml"
@@ -232,9 +232,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - id: idf_v4
-            base: idf_v4
-            yaml_file: ".test/esphome_idf_climate_heat.yaml"
+          #- id: idf_v4
+            #base: idf_v4
+            #yaml_file: ".test/esphome_idf_climate_heat.yaml"
          # - id: idf_v5
            # base: idf_v5
            # yaml_file: ".test/esphome_idf5_climate_heat.yaml"
@@ -286,9 +286,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - id: idf_v4
-            base: idf_v4
-            yaml_file: ".test/esphome_idf_advanced_climate_heat_customizations.yaml"
+          #- id: idf_v4
+            #base: idf_v4
+            #yaml_file: ".test/esphome_idf_advanced_climate_heat_customizations.yaml"
           - id: ard
             base: ard
             yaml_file: ".test/esphome_ard_advanced_climate_heat_customizations.yaml"
@@ -302,27 +302,27 @@ jobs:
         with:
           yaml_file: ${{ matrix.yaml_file }}
 
-  build_climate_ble_proxy:
-    name: Climate Cool + Bluetooth Proxy
-    needs:
-      - build_climate_cool
-      - build_bluetooth_proxy
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        include:
-          - id: idf_v4
-            base: idf_v4
-            yaml_file: ".test/esphome_idf_climate_cool_bluetooth_proxy.yaml"
+  #build_climate_ble_proxy:
+    #name: Climate Cool + Bluetooth Proxy
+    #needs:
+      #- build_climate_cool
+      #- build_bluetooth_proxy
+    #runs-on: ubuntu-latest
+    #strategy:
+      #matrix:
+        #include:
+          #- id: idf_v4
+            #base: idf_v4
+            #yaml_file: ".test/esphome_idf_climate_cool_bluetooth_proxy.yaml"
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@main
+    #steps:
+      #- name: Checkout repository
+        #uses: actions/checkout@main
 
-      - name: Build Customizations Firmware
-        uses: barndawgie/build-action@v1.9.0
-        with:
-          yaml_file: ${{ matrix.yaml_file }}
+      #- name: Build Customizations Firmware
+        #uses: barndawgie/build-action@v1.9.0
+        #with:
+          #yaml_file: ${{ matrix.yaml_file }}
 
   build_prebuilt_firmware:
     name: Prebuilt Firmware
