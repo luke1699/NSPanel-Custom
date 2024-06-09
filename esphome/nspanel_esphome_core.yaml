@@ -19,26 +19,6 @@ substitutions:
   ##### DON'T CHANGE THIS ######
   version: "4.3.7"
   ##############################
-  ##### Change MAC ADDRESS Sensors ###########
-  temperatura_sensore1: "Temperatura Nodo 1"
-  umidita_sensore1: "Umidità Nodo 1"
-  temperatura_sensore2: "Temperatura Nodo 2"
-  umidita_sensore2: "Umidità Nodo 2"
-  temperatura_sensore3: "Temperatura Nodo 3"
-  umidita_sensore3: "Umidità Nodo 3"
-  temperatura_sensore4: "Temperatura Nodo 4"
-  umidita_sensore4: "Umidità"
-  temperatura_sensore5: "Temperatura"
-  umidita_sensore5: "Umidità"
-  temperatura_sensore6: "Temperatura"
-  umidita_sensore6: "Umidità"
-  ######## Settings Relè ############
-  rele_name_1: "relè Stanza 1"
-  rele_name_2: "Relè Stanza 2"
-  rele_name_3: "Relè Stanza 3"
-  rele_name_4: "Relè Stanza 4"
-  rele_name_5: "Relè Stanza 5"
-  rele_name_6: "Relè Stanza 6"
 
 ##### External components #####
 external_components:
@@ -1833,32 +1813,32 @@ switch:
   ##### CONFIGURATION OF RELE BOARD ######
   - platform: gpio
     pin: GPIO19
-    name: &{rele_name_1}
+    name: "Relè Room 1"
     id: relay
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO18
-    name: &{rele_name_2}
+    name: "Relè Room 2"
     id: relay_02
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO32
-    name: &{rele_name_3}
+    name: "Relè Room 3"
     id: relay_03
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO33
-    name: &{rele_name_4}
+    name: "Relè Room 4"
     id: relay_04
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO04
-    name: "&{rele_name_5}"
+    name: "Relè Room 5"
     id: relay_05
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO15
-    name: &{Rele_name_6}
+    name: "Relè Room 6"
     id: relay_06
     restore_mode: ALWAYS_OFF
 
