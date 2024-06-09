@@ -1584,12 +1584,12 @@ sensor:
   - platform: beethowen_receiver
     mac_address: BC:FF:4D:5F:F3:AC #change MAC ADDRESS Node 1
     sensors:
-      - measurement_type: temperature
+      - measurement_type: 0x02
         id: temperature_1
         name: "Temperatura"
         accuracy_decimals: 2
         unit_of_measurement: "°C"
-      - measurement_type: humidity
+      - measurement_type: 0x03
         name: "Umidità"
         accuracy_decimals: 0
         unit_of_measurement: "%"
@@ -1597,12 +1597,12 @@ sensor:
   - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 2
     sensors:
-      - measurement_type: temperature
+      - measurement_type: 0x02
         id: temperature_2
         name: "Temperatura"
         accuracy_decimals: 2
         unit_of_measurement: "°C"
-      - measurement_type: humidity
+      - measurement_type: 0x03
         name: "Umidità"
         accuracy_decimals: 0
         unit_of_measurement: "%"
@@ -1610,12 +1610,12 @@ sensor:
   - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 3
     sensors:
-      - measurement_type: temperature
+      - measurement_type: 0x02
         id: temperature_3
         name: "Temperatura"
         accuracy_decimals: 2
         unit_of_measurement: "°C"
-      - measurement_type: humidity
+      - measurement_type: 0x03
         name: "Umidità"
         accuracy_decimals: 0
         unit_of_measurement: "%"
@@ -1623,12 +1623,12 @@ sensor:
   - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 4
     sensors:
-      - measurement_type: temperature
+      - measurement_type: 0x02
         id: temperature_4
         name: "Temperatura"
         accuracy_decimals: 2
         unit_of_measurement: "°C"
-      - measurement_type: humidity
+      - measurement_type: 0x03
         name: "Umidità"
         accuracy_decimals: 0
         unit_of_measurement: "%"
@@ -1636,12 +1636,12 @@ sensor:
   - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 5
     sensors:
-      - measurement_type: temperature
+      - measurement_type: 0x02
         id: temperature_5
         name: "Temperatura"
         accuracy_decimals: 2
         unit_of_measurement: "°C"
-      - measurement_type: humidity
+      - measurement_type: 0x03
         name: "Umidità"
         accuracy_decimals: 0
         unit_of_measurement: "%"
@@ -1649,12 +1649,12 @@ sensor:
   - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 6
     sensors:
-      - measurement_type: temperature
+      - measurement_type: 0x02
         id: temperature_6
         name: "Temperatura"
         accuracy_decimals: 2
         unit_of_measurement: "°C"
-      - measurement_type: humidity
+      - measurement_type: 0x03
         name: "Umidità"
         accuracy_decimals: 0
         unit_of_measurement: "%"
