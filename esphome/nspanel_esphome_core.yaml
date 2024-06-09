@@ -37,12 +37,12 @@ substitutions:
   umidita_sensore5: "Umidità Nodo 5"
   nome_stanza6: "Stanza 6"
   ######## Settings Relè ############
-  Rele_name_1: "Relè 1"
-  Rele_name_2: "Relè 2"
-  Rele_name_3: "Relè 3"
-  Rele_name_4: "Relè 4"
-  Rele_name_5: "Relè 5"
-  Rele_name_6: "Relè 6"
+  rele_name_1: "relè Stanza 1"
+  rele_name_2: "Relè Stanza 2"
+  rele_name_3: "Relè Stanza 3"
+  rele_name_4: "Relè Stanza 4"
+  rele_name_5: "Relè Stanza 5"
+  rele_name_6: "Relè Stanza 6"
 
 ##### External components #####
 external_components:
@@ -175,17 +175,17 @@ logger:
 beethowen_receiver:
   devices:
     - mac_address: BC:FF:4D:5F:F3:AC #change MAC ADDRESS
-      name_prefix: "&{nome_stanza1}"
+      name_prefix: &{nome_stanza1}
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza2}"
+      name_prefix: &{nome_stanza2}
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza3}"
+      name_prefix: &{nome_stanza3}
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza4}"
+      name_prefix: &{nome_stanza4}
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza5}"
+      name_prefix: &{nome_stanza5}
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: "&{nome_stanza6}"
+      name_prefix: &{nome_stanza6}
 
 ##### COnfiguration DALLAS Sensors ####
 dallas:
@@ -1610,11 +1610,11 @@ sensor:
     sensors:
       - measurement_type: 0x02
         id: temperature_1
-        name: "&{temperatura_sensore1}"
+        name: &{temperatura_sensore1}
         accuracy_decimals: 2
         unit_of_measurement: "°C"
       - measurement_type: 0x03
-        name: "&{umidita_sensore1}"
+        name: &{umidita_sensore1}
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 2 sensori #################
@@ -1623,11 +1623,11 @@ sensor:
     sensors:
       - measurement_type: 0x02
         id: temperature_2
-        name: "&{temperatura_sensore2}"
+        name: &{temperatura_sensore2}
         accuracy_decimals: 2
         unit_of_measurement: "°C"
       - measurement_type: 0x03
-        name: "&{umidita_sensore2}"
+        name: &{umidita_sensore2}
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 3 sensori #################
@@ -1636,11 +1636,11 @@ sensor:
     sensors:
       - measurement_type: 0x02
         id: temperature_3
-        name: "&{temperatura_sensore3}"
+        name: &{temperatura_sensore3}
         accuracy_decimals: 2
         unit_of_measurement: "°C"
       - measurement_type: 0x03
-        name: "&{umidita_sensore3}"
+        name: &{umidita_sensore3}
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 4 sensori #################
@@ -1649,11 +1649,11 @@ sensor:
     sensors:
       - measurement_type: 0x02
         id: temperature_4
-        name: "&{temperatura_sensore4}"
+        name: &{temperatura_sensore4}
         accuracy_decimals: 2
         unit_of_measurement: "°C"
       - measurement_type: 0x03
-        name: "&{umidita_sensore4}"
+        name: &{umidita_sensore4}
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 5 sensori #################
@@ -1662,11 +1662,11 @@ sensor:
     sensors:
       - measurement_type: 0x02
         id: temperature_5
-        name: "&{temperatura_sensore5}"
+        name: &{temperatura_sensore5}
         accuracy_decimals: 2
         unit_of_measurement: "°C"
       - measurement_type: 0x03
-        name: "&{umidita_sensore5}"
+        name: &{umidita_sensore5}
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 6 sensori #################
@@ -1675,11 +1675,11 @@ sensor:
     sensors:
       - measurement_type: 0x02
         id: temperature_6
-        name: "&{temperatura_sensore6}"
+        name: &{temperatura_sensore6}
         accuracy_decimals: 2
         unit_of_measurement: "°C"
       - measurement_type: 0x03
-        name: "&{umidita_sensore6}"
+        name: &{umidita_sensore6}
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ##### Blueprint status #####
@@ -1826,32 +1826,32 @@ switch:
   ##### CONFIGURATION OF RELE BOARD ######
   - platform: gpio
     pin: GPIO19
-    name: "&{Rele_name_1}"
+    name: &{rele_name_1}
     id: relay
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO18
-    name: "&{Rele_name_2}"
+    name: &{rele_name_2}
     id: relay_02
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO32
-    name: "&{Rele_name_3}"
+    name: &{rele_name_3}
     id: relay_03
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO33
-    name: "&{Rele_name_4}"
+    name: &{rele_name_4}
     id: relay_04
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO04
-    name: "&{Rele_name_5}"
+    name: "&{rele_name_5}"
     id: relay_05
     restore_mode: ALWAYS_OFF
   - platform: gpio
     pin: GPIO15
-    name: "&{Rele_name_6}"
+    name: &{Rele_name_6}
     id: relay_06
     restore_mode: ALWAYS_OFF
 
