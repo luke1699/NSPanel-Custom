@@ -174,7 +174,7 @@ logger:
 ##### Configuration ESPNow Nodes #####
 beethowen_receiver:
   devices:
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+    - mac_address: BC:FF:4D:5F:F3:AC #change MAC ADDRESS
       name_prefix: "&{nome_stanza1}"
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
       name_prefix: "&{nome_stanza2}"
@@ -1606,7 +1606,7 @@ sensor:
     unit_of_measurement: "°C"
   ########### configurazione nodo 1 sensori #################
   - platform: beethowen_receiver
-    mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 1
+    mac_address: BC:FF:4D:5F:F3:AC #change MAC ADDRESS Node 1
     sensors:
       - measurement_type: 0x02
         id: temperature_1
