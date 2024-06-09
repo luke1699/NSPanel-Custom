@@ -149,7 +149,7 @@ logger:
   
 ##### Configuration ESPNow Nodes #####
 beethowen_receiver:
-on_event: # on_event(address, event)
+  on_event: # on_event(address, event)
     - lambda: |-
         // ESP_LOGI("app", "event received {id} 0x%x {event_type} %d ({steps} %d)",
         //  event.id, event.event_type, event.steps);
