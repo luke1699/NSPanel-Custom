@@ -173,6 +173,16 @@ logger:
   
 ##### Configuration ESPNow Nodes #####
 beethowen_receiver:
+local_passkey: 0x1234
+on_event: # on_event(address, event)
+    - lambda: |-
+        // ESP_LOGI("app", "event received {id} 0x%x {event_type} %d ({steps} %d)",
+        //  event.id, event.event_type, event.steps);
+        if (event.id == bthome_base::BTHOME_BUTTON_EVENT) {
+          if (event.id == bthome_base::BTHOME_BUTTON_CLICK) {
+            ESP_LOGI("app", "button_click event");
+          }
+        }
   devices:
     - mac_address: BC:FF:4D:5F:F3:AC #change MAC ADDRESS
       name_prefix: &{nome_stanza1}
