@@ -184,17 +184,17 @@ on_event: # on_event(address, event)
         }
   devices:
     - mac_address: BC:FF:4D:5F:F3:AC #change MAC ADDRESS
-      name_prefix: &{nome_stanza1}
+      name_prefix: "Room 1"
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: &{nome_stanza2}
+      name_prefix: "Room 2"
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: &{nome_stanza3}
+      name_prefix: "Room 3"
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: &{nome_stanza4}
+      name_prefix: "Room 4"
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: &{nome_stanza5}
+      name_prefix: "Room 5"
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
-      name_prefix: &{nome_stanza6}
+      name_prefix: "Room 6"
 
 ##### COnfiguration DALLAS Sensors ####
 dallas:
