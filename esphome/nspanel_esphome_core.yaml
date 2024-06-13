@@ -149,6 +149,7 @@ logger:
   
 ##### Configuration BTHome Nodes #####
 beethowen_receiver:
+  dump: all
   devices:
     - mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS
       name_prefix: "Room 1"
