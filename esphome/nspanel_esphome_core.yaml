@@ -53,8 +53,8 @@ external_components:
     components:
       - adc  # Change this when PR#6330 is merged (2024.4?)
     refresh: 300s
-  - source: github://afarago/esphome_component_bthome #ESPHome - ESPNow
-    refresh: 1min
+  - source: github://afarago/esphome_component_bthome
+    refresh: 1 min
 
 ##### ESPHOME CONFIGURATION #####
 esphome:
