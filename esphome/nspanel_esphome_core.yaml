@@ -147,12 +147,12 @@ logger:
   id: logger_std
   #baud_rate: 0
   
-##### Configuration ESPNow Nodes #####
-beethowen_receiver:
-  local_passkey: 0x1234
-  dump: all
+##### Configuration BTHome Nodes #####
+esp32_ble_tracker:
+
+bthome_ble_receiver:
   devices:
-    - mac_address: BC:FF:4D:5F:F3:AC #change MAC ADDRESS
+    - mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS
       name_prefix: "Room 1"
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
       name_prefix: "Room 2"
@@ -1583,7 +1583,7 @@ sensor:
     accuracy_decimals: 1
     unit_of_measurement: "°C"
   ########### configurazione nodo 1 sensori #################
-  - platform: beethowen_receiver
+  - platform: bthome_ble_receiver
     mac_address: BC:FF:4D:5F:F3:AC #change MAC ADDRESS Node 1
     sensors:
       - measurement_type: 0x02
@@ -1596,7 +1596,7 @@ sensor:
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 2 sensori #################
-  - platform: beethowen_receiver
+  - platform: bthome_ble_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 2
     sensors:
       - measurement_type: 0x02
@@ -1609,7 +1609,7 @@ sensor:
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 3 sensori #################
-  - platform: beethowen_receiver
+  - platform: bthome_ble_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 3
     sensors:
       - measurement_type: 0x02
@@ -1622,7 +1622,7 @@ sensor:
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 4 sensori #################
-  - platform: beethowen_receiver
+  - platform: bthome_ble_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 4
     sensors:
       - measurement_type: 0x02
@@ -1635,7 +1635,7 @@ sensor:
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 5 sensori #################
-  - platform: beethowen_receiver
+  - platform: bthome_ble_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 5
     sensors:
       - measurement_type: 0x02
@@ -1648,7 +1648,7 @@ sensor:
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 6 sensori #################
-  - platform: beethowen_receiver
+  - platform: bthome_ble_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 6
     sensors:
       - measurement_type: 0x02
