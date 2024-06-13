@@ -149,26 +149,25 @@ logger:
   
 ##### Configuration BTHome Nodes #####
 beethowen_receiver:
-  dump: all
   devices:
     - mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS
       name_prefix: "Room 1"
-      dump: all
+      dump: unmatched
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
       name_prefix: "Room 2"
-      dump: all
+      dump: unmatched
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
       name_prefix: "Room 3"
-      dump: all
+      dump: unmatched
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
       name_prefix: "Room 4"
-      dump: all
+      dump: unmatched
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
       name_prefix: "Room 5"
-      dump: all
+      dump: unmatched
     - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
       name_prefix: "Room 6"
-      dump: all
+      dump: unmatched
 
 ##### COnfiguration DALLAS Sensors ####
 dallas:
