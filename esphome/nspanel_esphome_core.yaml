@@ -53,8 +53,8 @@ external_components:
     components:
       - adc  # Change this when PR#6330 is merged (2024.4?)
     refresh: 300s
-  - source: github://afarago/esphome_component_bthome
-    refresh: 60s
+  - source: github://afarago/esphome_component_bthome #ESPHome - ESPNow
+    refresh: 1min
 
 ##### ESPHOME CONFIGURATION #####
 esphome:
@@ -148,7 +148,7 @@ logger:
   #baud_rate: 0
   
 ##### Configuration BTHome Nodes #####
-bthome_ble_receiver:
+beethowen_receiver:
   devices:
     - mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS
       name_prefix: "Room 1"
@@ -1581,8 +1581,8 @@ sensor:
     accuracy_decimals: 1
     unit_of_measurement: "°C"
   ########### configurazione nodo 1 sensori #################
-  - platform: bthome_ble_receiver
-    mac_address: BC:FF:4D:5F:F3:AC #change MAC ADDRESS Node 1
+  - platform: beethowen_receiver
+    mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS Node 1
     sensors:
       - measurement_type: 0x02
         id: temperature_1
@@ -1594,7 +1594,7 @@ sensor:
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 2 sensori #################
-  - platform: bthome_ble_receiver
+  - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 2
     sensors:
       - measurement_type: 0x02
@@ -1607,7 +1607,7 @@ sensor:
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 3 sensori #################
-  - platform: bthome_ble_receiver
+  - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 3
     sensors:
       - measurement_type: 0x02
@@ -1620,7 +1620,7 @@ sensor:
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 4 sensori #################
-  - platform: bthome_ble_receiver
+  - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 4
     sensors:
       - measurement_type: 0x02
@@ -1633,7 +1633,7 @@ sensor:
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 5 sensori #################
-  - platform: bthome_ble_receiver
+  - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 5
     sensors:
       - measurement_type: 0x02
@@ -1646,7 +1646,7 @@ sensor:
         accuracy_decimals: 0
         unit_of_measurement: "%"
   ########### configurazione nodo 6 sensori #################
-  - platform: bthome_ble_receiver
+  - platform: beethowen_receiver
     mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS Node 6
     sensors:
       - measurement_type: 0x02
