@@ -119,7 +119,7 @@ psram:
 ##### WIFI SETUP #####
 wifi:
   id: wifi_component
-  power_save_mode: LIGHT
+  #power_save_mode: LIGHT
   networks:
     - id: wifi_default
       ssid: ${wifi_ssid}
