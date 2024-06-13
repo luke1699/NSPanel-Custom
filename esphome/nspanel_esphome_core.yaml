@@ -149,6 +149,8 @@ logger:
   
 ##### Configuration ESPNow Nodes #####
 beethowen_receiver:
+  local_passkey: 0x1234
+  dump: all
   devices:
     - mac_address: BC:FF:4D:5F:F3:AC #change MAC ADDRESS
       name_prefix: "Room 1"
