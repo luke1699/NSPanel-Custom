@@ -145,7 +145,7 @@ nspanel_ha_blueprint:
 ##### LOGGER #####
 logger:
   id: logger_std
-  #baud_rate: 0
+  baud_rate: 0
   
 ##### Configuration BTHome Nodes #####
 beethowen_receiver:
