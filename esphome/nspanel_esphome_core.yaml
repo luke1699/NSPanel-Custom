@@ -119,7 +119,7 @@ psram:
 ##### WIFI SETUP #####
 wifi:
   id: wifi_component
-  power_save_mode: none
+  power_save_mode: none #if it is disabled, the component ESPNow work better.
   networks:
     - id: wifi_default
       ssid: ${wifi_ssid}
@@ -1577,15 +1577,20 @@ sensor:
     dallas_id: room_temperature
     address: 0x1C0000031EDD2A28
     name: "Temperatura Stanza"
+  #### Internal Temperature #####
   - platform: template
-    id: tempmedium
+    id: temp_nspanel
     name: "Temperatura Media"
-    lambda: return ((id(temperature_1).state + id(temperature_2).state + id(temperature_3).state + id(temperature_4).state + id(temperature_5).state + id(temperature_6).state) /6);
+    lambda: return (((id(temperature_1).state + id(temperature_2).state + id(temperature_3).state + id(temperature_4).state + id(temperature_5).state + id(temperature_6).state) /6) + temperature_correction->state);
     update_interval: 10s
     device_class: "temperature"
     state_class: "measurement"
     accuracy_decimals: 1
     unit_of_measurement: "°C"
+    on_value:
+      then:
+        # Show panel's temperature if API or Wi-Fi are out
+        - lambda: display_embedded_temp->execute();
   ########### configurazione nodo 1 sensori #################
   - platform: beethowen_receiver
     mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS Node 1
@@ -1693,44 +1698,6 @@ sensor:
     on_value:
       then:
         - script.execute: refresh_wifi_icon
-
-  ##### INTERNAL TEMPERATURE SENSOR, ADC VALUE #####
-  - id: ntc_source
-    platform: adc
-    pin: 38
-    attenuation: 11db
-    samples: 4
-    update_interval: 10s
-    filters:
-      - sliding_window_moving_average:
-          window_size: 6
-          send_every: 1
-
-  ##### INTERNAL TEMPERATURE SENSOR, adc reading converted to resistance (calculation)#####
-  - id: resistance_sensor
-    platform: resistance
-    sensor: ntc_source
-    configuration: DOWNSTREAM
-    resistor: 11.2kOhm
-
-  ##### INTERNAL TEMPERATURE SENSOR, resistance to temperature (calculation) #####
-  - id: temp_nspanel
-    name: Temperature
-    platform: ntc
-    sensor: resistance_sensor
-    unit_of_measurement: °C
-    internal: false
-    calibration:
-      b_constant: 3950
-      reference_temperature: 25°C
-      reference_resistance: 10kOhm
-    filters:
-      - lambda: |-
-          return x + temperature_correction->state;
-    on_value:
-      then:
-        # Show panel's temperature if API or Wi-Fi are out
-        - lambda: display_embedded_temp->execute();
 
   ###### Display Brightness GET VALUE FROM NSPanel SLIDER #####
   - id: brightslider
