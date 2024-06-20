@@ -1582,7 +1582,9 @@ sensor:
   - platform: template
     id: temp_nspanel
     name: "Temperatura Media"
-    lambda: return (((id(temperature_1).state + id(temperature_2).state + id(temperature_3).state + id(temperature_4).state + id(temperature_5).state + id(temperature_6).state) /6) + temperature_correction->state);
+    filters:
+      - lambda: |-
+          return ((id(temperature_1).state + id(temperature_2).state + id(temperature_3).state + id(temperature_4).state + id(temperature_5).state + id(temperature_6).state) /6) + temperature_correction->state;
     update_interval: 10s
     device_class: "temperature"
     state_class: "measurement"
