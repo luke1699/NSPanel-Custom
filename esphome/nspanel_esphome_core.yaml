@@ -1569,15 +1569,15 @@ select:
 ##### START - SENSOR CONFIGURATION #####
 sensor:
   - platform: dallas_temp
-    dallas_id: collector_delivery_temperature
+    one_wire_id: collector_delivery_temperature
     address: 0x1C0000031EDD2A28
     name: "Temperatura Mandata Collettore"
   - platform: dallas_temp
-    dallas_id: collector_return_temperature
+    one_wire_id: collector_return_temperature
     address: 0x1C0000031EDD2A28
     name: "Temperatura Ritorno Collettore"
   - platform: dallas_temp
-    dallas_id: room_temperature
+    one_wire_id: room_temperature
     address: 0x1C0000031EDD2A28
     name: "Temperatura Stanza"
   #### Internal Temperature #####
