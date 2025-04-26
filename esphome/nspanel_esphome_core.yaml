@@ -170,7 +170,7 @@ beethowen_receiver:
       dump: unmatched
 
 ##### COnfiguration DALLAS Sensors ####
-dallas:
+one_wire:
   - pin: GPIO25
     id: collector_delivery_temperature
   - pin: GPIO26
