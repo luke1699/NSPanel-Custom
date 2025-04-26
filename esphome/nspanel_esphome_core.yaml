@@ -171,13 +171,13 @@ beethowen_receiver:
 
 ##### COnfiguration DALLAS Sensors ####
 one_wire:
-  - platform: dallas
+  - platform: gpio
     pin: GPIO25
     id: collector_delivery_temperature
-  - platform: dallas
+  - platform: gpio
     pin: GPIO26
     id: collector_return_temperature
-  - platform: dallas
+  - platform: gpio
     pin: GPIO27
     id: room_temperature
 
