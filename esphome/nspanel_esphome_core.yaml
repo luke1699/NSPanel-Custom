@@ -171,11 +171,14 @@ beethowen_receiver:
 
 ##### COnfiguration DALLAS Sensors ####
 one_wire:
-  - pin: GPIO25
+  - platform: dallas
+    pin: GPIO25
     id: collector_delivery_temperature
-  - pin: GPIO26
+  - platform: dallas
+    pin: GPIO26
     id: collector_return_temperature
-  - pin: GPIO27
+  - platform: dallas
+    pin: GPIO27
     id: room_temperature
 
 ##### ENABLE RINGTONE MUSIC SUPPORT #####
