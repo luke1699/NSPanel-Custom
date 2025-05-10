@@ -1789,12 +1789,12 @@ switch:
     id: relay_02
     restore_mode: ALWAYS_OFF
   - platform: gpio
-    pin: GPIO32
+    pin: GPIO33
     name: "Relè Room 3"
     id: relay_03
     restore_mode: ALWAYS_OFF
   - platform: gpio
-    pin: GPIO33
+    pin: GPIO32
     name: "Relè Room 4"
     id: relay_04
     restore_mode: ALWAYS_OFF
