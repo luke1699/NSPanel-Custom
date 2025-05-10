@@ -10,8 +10,8 @@
 substitutions:
   ### Local thermostat defaults ###
   # https://esphome.io/components/climate/thermostat.html
-  heater_relay: "0"  # Select 1 for "Relay 1", 2 for "Relay 2" or "0" to a dummy switch/disabled
-  cooler_relay: "0"  # Select 1 for "Relay 1", 2 for "Relay 2" or "0" to a dummy switch/disabled
+  heater_relay: "2"  # Select 1 for "Relay 1", 2 for "Relay 2" or "0" to a dummy switch/disabled
+  cooler_relay: "1"  # Select 1 for "Relay 1", 2 for "Relay 2" or "0" to a dummy switch/disabled
   min_off_time: "300"
   min_run_time: "300"
   min_idle_time: "30"
@@ -189,10 +189,10 @@ binary_sensor:
             condition:
               binary_sensor.is_on: stato_riscaldamento
             then:
-              - switch.turn_on: relay_1
-              - switch.turn_off: relay_2
+              - switch.turn_on: relay_2 #Heating Relay
+              - switch.turn_off: relay_1 #Cooling Relay
             else:
-              - switch.turn_off: relay_1
+              - switch.turn_off: relay_2
   - platform: template
     name: "Stato Raffrescamento"
     id: stato_raffrescamento
@@ -209,10 +209,10 @@ binary_sensor:
             condition:
               binary_sensor.is_on: stato_raffrescamento
             then:
-              - switch.turn_on: relay_2
-              - switch.turn_off: relay_1
-            else:
+              - switch.turn_on: relay_1
               - switch.turn_off: relay_2
+            else:
+              - switch.turn_off: relay_1
 
 switch:
   ##### PHYSICAL SWITCH 0 (Dummy) - Used when relay is not set #####
