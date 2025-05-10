@@ -1,5 +1,5 @@
 # PROJECT INFORMTION
-This project was developed to add a 6-relay board to the original Sonoff NS Panel to handle underfloor heating and cooling, and a 12-relay board to handle 6 zones with both functionalities.
+This project was developed to add a 6-relay board to the original Sonoff NS Panel to handle underfloor heating, cooling, and both functionalities.
 
 # NSPanel Custom with HA Blueprint
 
