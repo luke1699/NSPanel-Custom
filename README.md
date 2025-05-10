@@ -1,5 +1,5 @@
 # PROJECT INFORMTION
-This project was developed to add a board with 6 relays to the original Sonoff NS Panel to manage underfloor heating.
+This project was developed to add a board with 6 relays to the original Sonoff NS Panel to manage underfloor heating/cooling.
 
 # NSPanel Custom with HA Blueprint
 
