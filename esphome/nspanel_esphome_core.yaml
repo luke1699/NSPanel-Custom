@@ -153,23 +153,23 @@ beethowen_receiver:
     - mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS
       name_prefix: "Room 1"
       dump: unmatched
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+    - mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS
       name_prefix: "Room 2"
       dump: unmatched
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+    - mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS
       name_prefix: "Room 3"
       dump: unmatched
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+    - mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS
       name_prefix: "Room 4"
       dump: unmatched
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+    - mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS
       name_prefix: "Room 5"
       dump: unmatched
-    - mac_address: FF:FF:FF:FF:FF:FF #change MAC ADDRESS
+    - mac_address: c8:c9:a3:c9:e5:98 #change MAC ADDRESS
       name_prefix: "Room 6"
       dump: unmatched
 
-##### COnfiguration DALLAS Sensors ####
+##### Configuration DALLAS Sensors ####
 one_wire:
   - platform: gpio
     pin: GPIO25
